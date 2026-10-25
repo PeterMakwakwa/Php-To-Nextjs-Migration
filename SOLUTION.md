@@ -364,3 +364,26 @@ Tested by hand:
   removes that build-time dependency.
 - **Jest instead of Vitest:** for the same reason, Vite can't load test files from a path containing `#`.
   `next/jest` is the officially documented setup and compiles with Next's own SWC configuration.
+
+---
+
+## AI usage
+
+I built this with an AI coding assistant (Claude Code), using a `frontend-architecture` skill I created for
+myself. The skill holds my standards for Next.js + TypeScript work. It is the frontend counterpart to the
+`architectural-patterns` skill I use for C#, and lives in my personal skills library, not in this repository.
+
+| Part of the skill | What it covers |
+| --- | --- |
+| `SKILL.md` | When and why to apply each pattern; the non-negotiables (server-first rendering, boundary validation, typed config, a logger abstraction, the test pyramid); what not to build; a review checklist |
+| `nextjs/rendering-and-caching.md` | Cache Components, on-demand revalidation, `proxy.ts` routing, prerender pitfalls |
+| `patterns/anti-corruption-layer.md` | Containing a legacy API behind an interface, with normalization rules |
+| `patterns/legacy-migration.md` | Strangler-fig decisions, the migration list and its fail-safes, avoiding duplicate content |
+| `practices/resilience-and-observability.md` | Timeouts, error states, secured webhooks, structured logging |
+| `practices/testing.md` | Unit, end-to-end and Playwright tests, and the CI workflow |
+
+How I used it:
+- The skill gives the assistant my architecture rules, so its suggestions and reviews follow my standards
+  rather than generic defaults.
+- I used the assistant for implementation, tests and review. The design decisions and trade-offs in this
+  document are mine, and I verified the behaviour claims on production builds, as recorded above.
