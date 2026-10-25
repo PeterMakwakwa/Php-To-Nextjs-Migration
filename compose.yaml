@@ -1,0 +1,12 @@
+# Optional: run the legacy PHP app in Docker instead of a local PHP install.
+#   docker compose up --build legacy-php
+# The app is then available at http://localhost:8000, exactly as with `php -S`.
+services:
+  legacy-php:
+    build: ./legacy-php
+    ports:
+      - "8000:8000"
+    volumes:
+      # Live-mount the source so edits apply without rebuilding (dev convenience).
+      - ./legacy-php:/app
+    restart: unless-stopped
