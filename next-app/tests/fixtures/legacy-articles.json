@@ -1,0 +1,58 @@
+[
+  {
+    "id": 1,
+    "slug": "hello-nextjs",
+    "title": "Hello, Next.js: Why We Are Migrating",
+    "summary": "The reasons behind moving our publishing platform from a custom PHP stack to Next.js.",
+    "body": "Our PHP platform has served us well for over a decade.\n\nBut shipping new experiences has become slow. Next.js gives us server rendering, a modern component model and first-class TypeScript.\n\nThis article kicks off a series documenting the migration.",
+    "author": "Jane Doe",
+    "published_at": "2024-03-15",
+    "is_published": 1,
+    "featured": 1,
+    "tags": "nextjs, react,typescript"
+  },
+  {
+    "article_id": "2",
+    "slug": "typescript-tips",
+    "headline": "Five TypeScript Tips for Former C# Developers",
+    "body": "If you know C#, TypeScript will feel familiar.\r\n\r\nPrefer union types over enums, lean on type inference, and enable strict mode from day one.",
+    "author_name": "Peter M.",
+    "date": "15/04/2024",
+    "published": "1",
+    "featured": "0",
+    "tags": ["typescript", "csharp", "tips"]
+  },
+  {
+    "id": 3,
+    "slug": "php-legacy-patterns",
+    "title": "Legacy PHP Patterns We Are Leaving Behind",
+    "summary": null,
+    "content": "Global state, mixed HTML and SQL, and include-driven routing.\n\nEach pattern made sense once. Today they slow us down.",
+    "author": null,
+    "created": 1717200000,
+    "published": true,
+    "tags": "php, legacy, "
+  },
+  {
+    "id": "4",
+    "slug": "migrating-without-downtime",
+    "title": "Migrating Page by Page Without Downtime",
+    "summary": "",
+    "body": "The strangler fig pattern lets new and old systems run side by side.\n\nRequests for migrated pages go to the new app; everything else still reaches the legacy system.",
+    "author": "  John Smith ",
+    "publish_date": "June 20, 2024",
+    "is_published": "yes",
+    "featured": "true",
+    "tag_list": "migration,devops,,architecture"
+  },
+  {
+    "id": 5,
+    "slug": "caching-strategies",
+    "headline": "Caching Strategies for Content Sites",
+    "body": "Content changes rarely but is read constantly.\n\nTime-based revalidation keeps pages fast while still picking up edits within a minute.",
+    "published_at": "2024-07-01T09:30:00+02:00",
+    "is_published": 1,
+    "featured": 0,
+    "tags": ""
+  }
+]
