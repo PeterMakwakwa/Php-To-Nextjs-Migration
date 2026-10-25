@@ -1,5 +1,7 @@
 # PHP → Next.js Phased Migration (Articles)
 
+[![CI](https://github.com/PeterMakwakwa/Php-To-Nextjs-Migration/actions/workflows/ci.yml/badge.svg)](https://github.com/PeterMakwakwa/Php-To-Nextjs-Migration/actions/workflows/ci.yml)
+
 A small, realistic slice of a page-by-page migration from a legacy PHP site to Next.js + TypeScript.
 
 | Directory      | What it is                                                                 | Port |
@@ -24,8 +26,8 @@ Commands below are for macOS/Linux (bash/zsh). On Windows, see [Windows (PowerSh
 ### 1. Get the code
 
 ```bash
-git clone <repository-url> php-to-nextjs-migration
-cd php-to-nextjs-migration          # the repository root: every path below starts here
+git clone https://github.com/PeterMakwakwa/Php-To-Nextjs-Migration.git
+cd Php-To-Nextjs-Migration          # the repository root: every path below starts here
 ```
 
 ### 2. Start the legacy PHP app (terminal 1)
@@ -131,6 +133,10 @@ will look broken. The `VAR=value command` form above only applies to that one co
 if you used `export` (or PowerShell, below), clear the variables first.
 
 ## Tests and checks
+
+GitHub Actions ([`.github/workflows/ci.yml`](.github/workflows/ci.yml)) runs all of these on every push and pull request:
+static checks and unit tests first, then a production build against the dockerized legacy app, the end-to-end
+suite and the browser tests. Locally:
 
 ```bash
 cd next-app

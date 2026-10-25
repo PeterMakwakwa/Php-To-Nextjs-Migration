@@ -328,7 +328,7 @@ config and **structured logging**.
 | TypeScript | Strict mode |
 | Lint and format | ESLint (Next.js core-web-vitals + TypeScript rules), Prettier |
 | Testing | Test pyramid (many unit tests, fewer end-to-end tests, a few browser tests with Playwright); test doubles (in-memory `ArticleSource`) |
-| Git | Conventional Commits |
+| Git and CI | Conventional Commits; GitHub Actions running every check and test suite on each push and pull request |
 
 ### Deliberately not applied
 
@@ -349,6 +349,7 @@ config and **structured logging**.
 | Browser tests (3) | `npm run test:browser` | Playwright in headless Chromium against the running system, covering what plain HTTP checks can't see: a migrated article opens with **client-side navigation** (no full page load) with the right title; an unmigrated article is a **full page load** handed to legacy under the same URL, query string included; **Back and Forward** work across Next.js and legacy pages |
 | Static checks | `npm run check` | Strict TypeScript, ESLint (Next core-web-vitals + TS), Prettier |
 | PHP | `php -l` | Syntax of every file, `declare(strict_types=1)` everywhere, output escaped with `htmlspecialchars` |
+| CI | GitHub Actions (`.github/workflows/ci.yml`) | On every push and pull request: the static checks, unit tests and PHP lint, then legacy PHP in Docker (waiting for its health check), a production build, the end-to-end suite and the browser tests. Playwright traces and server logs are kept when a run fails |
 
 Tested by hand:
 - PHP killed while Next.js runs: migrated pages kept being served from cache.
