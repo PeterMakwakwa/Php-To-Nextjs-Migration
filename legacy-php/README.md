@@ -22,6 +22,13 @@ docker compose up --build legacy-php    # or Docker, from the repo root
 | `GET /article.php?id={id}`     | Very old URL style, still supported             |
 | `GET /about.php`, `GET /`      | Example non-article legacy pages                |
 
+## Telling Next.js that content changed
+
+`php bin/notify-next.php [slug]` posts to the Next.js revalidation webhook so an edit shows immediately instead
+of after Next.js's 60-second cache refresh. A real CMS would call it from its "save" hook. It needs
+`REVALIDATE_SECRET` (the same value as in the Next.js app) and optionally `NEXT_REVALIDATE_URL`
+(default `http://localhost:3000/api/revalidate`). See the [repository README](../README.md).
+
 ## Simulating an unreliable legacy system
 
 | Query / env var                    | Effect                               |
